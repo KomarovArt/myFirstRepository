@@ -1,25 +1,21 @@
-let title = "Типы данных, операторы, методы и свойства";
-let screens = "Простые, Сложные, Интерактивные";
-let screenPrice = 15;
-let rollback = Math.random(0, 100);
-let fullPrice = 150000;
-let adaptive = true;
+let num = 266219;
+let numString = String(num);
+let numConsoleLog = 1;
 
-//Вывести в консоль тип данных значений переменных title, fullPrice, adaptive;
-console.log(typeof title);
-console.log(typeof fullPrice);
-console.log(typeof adaptive);
 
-//Вывести в консоль длину строки screens
-console.log(screens.length);
+/*Вывести в консоль произведение (умножение) цифр этого числа
+Например: число 123, при помощи javaScript получить каждую цифру ( 1, 2, 3 ) и перемножить их. Правильно использовать цикл или методы перебора.*/
 
-//Вывести в консоль “Стоимость верстки экранов (screenPrice) рублей/ долларов/гривен/юани” и “Стоимость разработки сайта (fullPrice) рублей/ долларов/гривен/юани”
-console.log("Стоимость верстки экранов " + screenPrice + " долларов");
-console.log("Стоимость разработки сайта " + (fullPrice) + " рублей");
+for (let x = 0; x < numString.length; x++) {
+    numConsoleLog = numConsoleLog * numString[x];
+}
 
-//Привести строку screens к нижнему регистру и разбить строку на массив, вывести массив в консоль
-console.log(screens.toLocaleLowerCase().split(", "));
+console.log(numConsoleLog);
 
-//Вывести в консоль Процент отката посреднику за работу (fullPrice * (rollback/100))
-let percentageForWork = fullPrice * (rollback / 100);
-console.log(Math.round(percentageForWork));
+//Полученный результат возвести в степень 3, используя только 1 оператор (Math.pow не подходит)
+numConsoleLog = (numConsoleLog ** 3);
+console.log(numConsoleLog);
+
+//Вывести в консоль первые 2 цифры полученного числа
+numString = String(numConsoleLog);
+console.log(numString.substr(0, 2));
