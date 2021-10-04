@@ -25,10 +25,10 @@ let servicePercentPrice;
  (screenPrice + servicePrice1 + servicePrice2) и результат занести в переменную fullPrice */
 
 fullPrice = Number(screenPrice) + Number(servicePrice1) + Number(servicePrice2);
-console.log(fullPrice);
-console.log(rollback);
+
 /*Объявить переменную servicePercentPrice и занести в нее итоговую стоимость за вычетом процента отката 
 (fullPrice - Процент отката за работу), округляя в большую сторону (методы объекта Math в помощь) и вывести ее в консоль*/
+
 servicePercentPrice = Math.ceil(fullPrice - (fullPrice * (rollback / 100)));
 console.log(servicePercentPrice);
 
