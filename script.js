@@ -9,8 +9,8 @@ let service1 = prompt("Какой дополнительный тип услуг
 let servicePrice1 = prompt("Сколько это будет стоить?");
 let service2 = prompt("Какой дополнительный тип услуги нужен?");
 let servicePrice2 = prompt("Сколько это будет стоить?");
-let fullPrice = Number(screenPrice) + Number(servicePrice1) + Number(servicePrice2);
-let servicePercentPrice;
+let fullPrice;
+let allServicePrices;
 let screensArr = screens.split(", ");
 
 
@@ -19,6 +19,7 @@ let screensArr = screens.split(", ");
 const getAllServicePrices = function () {
      return servicePrice1 + servicePrice2;
 };
+allServicePrices = getAllServicePrices();
 
 /*Объявить функцию getFullPrice. 
 Функция возвращает сумму стоимости верстки и стоимости дополнительных услуг 
@@ -26,6 +27,7 @@ const getAllServicePrices = function () {
 function getFullPrice() {
      return screenPrice + getAllServicePrices();
 }
+fullPrice = getFullPrice();
 
 /*Объявить функцию getTitle. Функция возвращает title меняя его таким образом:
  первый символ с большой буквы, остальные с маленькой". Учесть вариант что строка 
@@ -74,13 +76,13 @@ const getRollbackMessage = function () {
      }
 };
 
+console.log(getServicePercentPrices());
 showTypeOf(title);
 showTypeOf(fullPrice);
 showTypeOf(adaptive);
+getRollbackMessage();
 console.log(screens);
 
-
-getRollbackMessage();
 /*
 
 console.log(screens.length);
