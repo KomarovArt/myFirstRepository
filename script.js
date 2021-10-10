@@ -25,6 +25,7 @@ const game = function () {
                 }
             } else {
                 alert("Введи число!");
+                numHidden = 0;
                 gameResult();
             }
         } else {
