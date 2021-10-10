@@ -13,7 +13,7 @@ const game = function () {
         if (goGame) {
             if (isNumber(numHidden)) {
                 if (numHidden !== randNumber) {
-                    numHidden = Number(prompt("Угадай число от 1 до 100", "88"));
+                    numHidden = Number(prompt("Угадай число от 1 до 100", numHidden));
                     if (numHidden < randNumber) {
                         alert("Заданное число больше!");
                     } else if (numHidden > randNumber) {
