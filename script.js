@@ -9,7 +9,6 @@ const isNumber = function (num) {
 
 const game = function () {
     let randNumber = Math.round(Math.random() * 100);
-    console.log(randNumber);
     const gameResult = function () {
         if (goGame) {
             numHidden = Number(prompt("Угадай число от 1 до 100"));
@@ -17,7 +16,6 @@ const game = function () {
                 if (numHidden == randNumber) {
                     alert("Поздравляю, Вы угадали!!!");
                 } else if (numHidden !== randNumber) {
-                    console.log(numHidden, typeof (numHidden));
                     if (numHidden == 0) {
                         let gameOver = confirm("Хотите окончить игру?");
                         if (gameOver) {
