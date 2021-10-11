@@ -1,7 +1,7 @@
 'use strict';
 
 let numHidden = 0;
-
+let goGame = confirm("Играем?");
 
 const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
@@ -9,30 +9,34 @@ const isNumber = function (num) {
 
 const game = function () {
     let randNumber = Math.round(Math.random() * 100);
-    let goGame = confirm("Играем?");
-
+    console.log(randNumber);
     const gameResult = function () {
         if (goGame) {
+            numHidden = Number(prompt("Угадай число от 1 до 100"));
             if (isNumber(numHidden)) {
-                if (numHidden !== randNumber) {
-                    numHidden = Number(prompt(confirm("Угадай число от 1 до 100")));
-                    if (numHidden == false) {
-                        alert("Игра окончена");
+                if (numHidden == randNumber) {
+                    alert("Поздравляю, Вы угадали!!!");
+                } else if (numHidden !== randNumber) {
+                    console.log(numHidden, typeof (numHidden));
+                    if (numHidden == 0) {
+                        let gameOver = confirm("Хотите окончить игру?");
+                        if (gameOver) {
+                            alert("Игра окончена");
+                        } else {
+                            numHidden = 0;
+                            gameResult();
+                        }
                     } else if (numHidden < randNumber) {
-                        console.log(numHidden);
                         alert("Заданное число больше!");
                         gameResult();
                     } else if (numHidden > randNumber) {
                         alert("Загаданное число меньше!");
                         gameResult();
                     }
-
-                } else {
-                    alert("Поздравляю, Вы угадали!!!");
                 }
             } else {
                 alert("Введи число!");
-                numHidden = 0;
+                let numHidden = 0;
                 gameResult();
             }
         } else {
