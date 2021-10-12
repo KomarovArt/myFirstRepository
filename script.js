@@ -13,6 +13,21 @@ let screensArr;
 let resulttitle;
 let servicePrice;
 
+const appData = {
+    rollback;
+    title;
+    screens;
+    screenPrice;
+    adaptive;
+    service1;
+    service2;
+    fullPrice;
+    allServicePrices;
+    screensArr;
+    resulttitle;
+    servicePrice;
+};
+
 const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
 }
@@ -93,8 +108,3 @@ showTypeOf(adaptive);
 getRollbackMessage();
 
 screensArr = screens.split(", ");
-console.log(allServicePrices);
-console.log(getServicePercentPrices());
-console.log(screens);
-console.log(screensArr);
-console.log(title);
